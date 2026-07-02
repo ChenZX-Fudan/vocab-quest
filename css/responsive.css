@@ -1,0 +1,90 @@
+/* === Mobile (< 480px) === */
+@media (max-width: 479px) {
+  :root {
+    --header-height: 48px;
+    --nav-height: 56px;
+    --space-md: 12px;
+    --space-lg: 18px;
+  }
+
+  .header-title { font-size: var(--font-base); }
+
+  .quiz-prompt { font-size: var(--font-xl); }
+  .quiz-prompt.en-word { font-size: var(--font-2xl); }
+
+  .quiz-options {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .map-node {
+    min-width: 64px;
+    padding: var(--space-sm);
+  }
+
+  .results-stars .star { font-size: 2rem; }
+}
+
+/* === Tablet (480px - 768px) === */
+@media (min-width: 480px) and (max-width: 767px) {
+  .quiz-options {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* === Desktop (> 768px) === */
+@media (min-width: 768px) {
+  :root {
+    --max-width: 640px;
+  }
+
+  #app-content {
+    padding: var(--space-xl);
+  }
+
+  .quiz-options {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .map-nodes {
+    gap: var(--space-md);
+  }
+
+  .map-node {
+    min-width: 100px;
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .map-node:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* === Large Desktop (> 1024px) === */
+@media (min-width: 1024px) {
+  :root {
+    --max-width: 720px;
+  }
+
+  body {
+    /* Center the app like a phone on desktop */
+    max-width: var(--max-width);
+    margin: 0 auto;
+    box-shadow: var(--shadow-lg);
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+}
+
+/* === Reduced motion === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

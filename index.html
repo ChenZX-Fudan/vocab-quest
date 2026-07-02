@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#4F46E5">
+  <meta name="description" content="中考单词打卡闯关 - 上海初中考纲词汇游戏化学习">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="单词闯关">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+
+  <title>单词闯关 · 中考词汇</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/map.css">
+  <link rel="stylesheet" href="css/quiz.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- App Header -->
+  <header id="app-header">
+    <button class="header-back" id="btn-back" title="返回">←</button>
+    <h1 class="header-title" id="header-title">单词闯关</h1>
+    <div class="header-streak" id="header-streak"></div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main id="app-content"></main>
+
+  <!-- Bottom Navigation -->
+  <nav id="bottom-nav">
+    <a href="#/" class="nav-item" data-route="/">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-label">首页</span>
+    </a>
+    <a href="#/map" class="nav-item" data-route="/map">
+      <span class="nav-icon">🗺️</span>
+      <span class="nav-label">闯关</span>
+    </a>
+    <a href="#/errors" class="nav-item" data-route="/errors">
+      <span class="nav-icon">📝</span>
+      <span class="nav-label">错题本</span>
+    </a>
+    <a href="#/achievements" class="nav-item" data-route="/achievements">
+      <span class="nav-icon">🏆</span>
+      <span class="nav-label">成就</span>
+    </a>
+    <a href="#/settings" class="nav-item" data-route="/settings">
+      <span class="nav-icon">⚙️</span>
+      <span class="nav-label">设置</span>
+    </a>
+  </nav>
+
+  <!-- Update Toast -->
+  <div id="update-toast" class="toast hidden">
+    <span>🔄 有新版本可用</span>
+    <button id="btn-update">刷新</button>
+  </div>
+
+  <!-- JS Modules -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
