@@ -98,18 +98,20 @@ export default class MapScreen {
         const gradeMatch = k.match(/^g(\d+)/);
         const gradeNum = gradeMatch ? parseInt(gradeMatch[1]) : 6;
 
+        const unitLabel = unit === '99' ? '考纲' : `U${unit}`;
         return `
           <div class="map-node ${stateClass} grade${gradeNum}" data-level="${k}">
-            <span class="map-node-label">U${unit}-${k.endsWith('g1') ? 'A' : 'B'}</span>
+            <span class="map-node-label">${unitLabel}-${k.endsWith('g1') ? 'A' : 'B'}</span>
             <span class="map-node-wordcount">${wordCount}词</span>
             <div class="map-node-stars">${renderStars(stars)}</div>
           </div>
         `;
       }).join('');
 
+      const unitRowLabel = unit === '99' ? '2026考纲' : `U${unit}`;
       return `
         <div class="map-unit-row">
-          <div class="map-unit-label">U${unit}</div>
+          <div class="map-unit-label">${unitRowLabel}</div>
           <div class="map-nodes">${nodes}</div>
         </div>
       `;

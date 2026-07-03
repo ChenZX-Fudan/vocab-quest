@@ -1,4 +1,4 @@
-import { grade6Words, grade7Words, grade8Words, grade9Words } from '../../data/index.js';
+import { grade6Words, grade7Words, grade8Words, grade9Words, grade6ExamWords, grade7ExamWords, grade8ExamWords } from '../../data/index.js';
 
 let allWords = [];
 let wordsById = {};
@@ -9,7 +9,10 @@ let levelKeys = [];
  * Initialize vocabulary in memory.
  */
 export function init() {
-  allWords = [...grade6Words, ...grade7Words, ...grade8Words, ...grade9Words];
+  allWords = [
+    ...grade6Words, ...grade7Words, ...grade8Words, ...grade9Words,
+    ...grade6ExamWords, ...grade7ExamWords, ...grade8ExamWords
+  ];
 
   wordsById = {};
   for (const w of allWords) {
@@ -130,6 +133,7 @@ export function getNextLevel(key) {
  */
 export function getLevelLabel(key) {
   const [, unit, group] = parseLevelKey(key);
+  if (unit === 99) return `考纲-${group === 1 ? 'A' : 'B'}`;
   return `Unit ${unit}-${group === 1 ? 'A' : 'B'}`;
 }
 
